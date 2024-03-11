@@ -9,71 +9,125 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .center {
+        main {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
+            background-color: black;
+        }
+
+        nav {
+            width: 20%;
+            height: 600px;
+            background-color: rgb(10, 10, 10);
         }
 
         section {
             display: flex;
+            
+            width: 80%;
+            height: 600px;
+            background-color: rgb(18, 5, 194);
+        }
+        .foto{
+            width: 200px;
+        }
+        .infoProduto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+        }
+
+        .cartaoProduto {
+            display: flex;
+            flex-direction: column; 
+            margin: 5%;
+        }
+
+        .cartaoProduto img {
+            margin-bottom: 10px; 
+        }
+
+        .botoesExclusao {
+            display: flex;
+            justify-content: space-around;
+            width: 100%; 
         }
     </style>
 
 
-
-
-
-
-
 </head>
-
-
-
-
-
-
-
 
 <body>
     <h1>CARRINHO</h1> <br>
     <h2>Imagem</h2>
-  
-
-
-
-    <section>
+    <main>
+        
         <nav>
+
             <ul>
 
 
-
-
-
-
-
-
             </ul>
+
         </nav>
+        <section>
+
+            <div class="cartaoProduto" id="produto1">
+                <img src="A24.webp" class="foto">
+                <div class="infoProduto">
+                    <h2>Samsung Galaxy A24 </h2>
+                    <h3>128 GB preto 4 GB RAM</h3>
+                    <h4>R$ 929,91</h4>
+                </div>
+                <div class="botoesExclusao">
+                    <button type="button" onclick="excluirItem('produto1')">Excluir</button>
+                    <button type="button" onclick="comprarItem()">Comprar</button>
+                </div>
+            </div>
+
+            <div class="cartaoProduto" id="produto2">
+                <img src="iphone.avif" class="foto"> 
+                <div class="infoProduto">
+                    <h2>Apple iPhone 15</h2>
+                    <h3>128 GB - Azul</h3>
+                    <h4>R$ 5.299,00</h4>
+                </div>
+                <div class="botoesExclusao">
+                    <button type="button" onclick="excluirItem('produto2')">Excluir</button>
+                    <button type="button" onclick="comprarItem()">Comprar</button>
+                </div>
+            </div>
+
+            <div class="cartaoProduto" id="produto3">
+                <img src="notebook.avif" class="foto"> 
+                <div class="infoProduto">
+                    <h2>Notebook Lenovo</h2>
+                    <h3> V14 (14" AMD)</h3>
+                    <h4>R$2.023,99</h4>
+                </div>
+                <div class="botoesExclusao">
+                    <button type="button" onclick="excluirItem('produto3')">Excluir</button>
+                    <button type="button" onclick="comprarItem()">Comprar</button>
+                </div>
+            </div>
 
 
-        <div class="center">
+        </section>
 
-            <img src="A24.webp" width="25%">
-            <p>Samsung Galaxy A24 128 GB preto 4 GB RAM</p>
+    </main>
 
+    <script>
+        function excluirItem(id) {
+            var element = document.getElementById(id);
+            element.parentNode.removeChild(element);
+        }
 
-        </div>
-
-
-
-
-
-
-
-    </section>
-
-
-
+        function comprarItem() {
+            console.log("Item comprado.");
+        }
+    </script>
+</body>
 
 </html>
